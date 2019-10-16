@@ -1,0 +1,25 @@
+clc;
+close all;
+clear all;
+wn = 1;
+z = [0.1 0.3 0.5 0.7 1 2];
+G1 = tf([0 0 wn],[1 2*z(1) 0]);
+G2 = tf([0 0 wn],[1 2*z(2) 0]);
+G3 = tf([0 0 wn],[1 2*z(3) 0]);
+G4 = tf([0 0 wn],[1 2*z(4) 0]);
+G5 = tf([0 0 wn],[1 2*z(5) 0]);
+G6 = tf([0 0 wn],[1 2*z(6) 0]);
+Y1 = feedback(G1,1);
+Y2 = feedback(G2,1);
+Y3 = feedback(G3,1);
+Y4 = feedback(G4,1);
+Y5 = feedback(G5,1);
+Y6 = feedback(G6,1);
+S = stepinfo(Y1);
+subplot(2,3,1),
+step(Y1);title('z = 0.1');
+subplot(2,3,2),step(Y2);title('z = 0.3');
+subplot(2,3,3),step(Y3);title('z = 0.5');
+subplot(2,3,4),step(Y4);title('z = 0.7');
+subplot(2,3,5),step(Y5);title('z = 1');
+subplot(2,3,6),step(Y6);title('z = 3');
