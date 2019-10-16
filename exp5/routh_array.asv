@@ -15,10 +15,14 @@ end
 epss = 0.01;
 for i = 3:ceoffLength
     if rTable(i-1,:) == 0
-        order = (ceoffLength - i + 2);
+        order = (ceoffLength - i);
         cnt1 = 0;
         cnt2 = 1;
+        order
+        rTableColumn
         for j = 1:rTableColumn - 1
+            j
+            (order - cnt1) * rTable(i-2,cnt2)
             rTable(i-1,j) = (order - cnt1) * rTable(i-2,cnt2)
             cnt2 = cnt2 + 1;
             cnt1 = cnt1 + 2;
